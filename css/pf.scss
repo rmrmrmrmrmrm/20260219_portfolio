@@ -1,0 +1,183 @@
+@import "reset";
+@import "base";
+
+header {
+  @media screen and (max-width: 800px) {
+  }
+
+  h1#logo {
+    @media screen and (max-width: 800px) {
+    }
+
+    a {
+      @media screen and (max-width: 800px) {
+      }
+    }
+  }
+
+  h1#logo.logoMove {
+    @media screen and (max-width: 800px) {
+    }
+
+    a {
+    }
+  }
+
+  h1#logo.logoFront {
+  }
+
+  #menubar {
+    ul {
+      li {
+        @media screen and (max-width: 800px) {
+        }
+
+        @media screen and (max-width: 800px) {
+        }
+
+        a {
+        }
+      }
+    }
+  }
+
+  #menubar-btn {
+    span {
+    }
+  }
+}
+
+header.bl {
+}
+
+header.head_move {
+  z-index: 3;
+  top: 0vh;
+  left: 0vh;
+  right: 0;
+  margin: auto;
+}
+
+#worksarea {
+  width: min(100%, 500px);
+  margin: 0 auto;
+
+  .work_detail {
+    padding: 6em 1em 6em;
+
+    h1 {
+      font-size: 2em;
+      margin: 0 0 1.5em;
+    }
+  }
+
+  .img {
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: 44%;
+
+      @media screen and (max-width: 800px) {
+      }
+    }
+
+    .swiper-button-next {
+      right: 0;
+    }
+
+    .swiper-button-prev {
+      left: 0;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      color: #000;
+      font-size: 2em;
+    }
+
+    .swiper-container {
+    }
+
+    .swiper-container.slider {
+      padding: 0 0 3.5em;
+    }
+
+    .swiper-slide {
+      height: 100%;
+
+      li {
+        text-align: center;
+
+        /*padding:0 0 2em;*/
+        p {
+          /*position:absolute;*/
+          /*bottom:0;*/
+          /*left:0;*/
+        }
+
+        img {
+          text-align: center;
+          height: 300px;
+          width: auto;
+          margin: auto;
+
+          @media screen and (max-width: 800px) {
+            height: 70vw;
+          }
+        }
+      }
+    }
+
+    .thumbnail-container {
+      .thumbnail-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        .btn {
+          padding: 1%;
+          display: block;
+          width: 14%;
+        }
+      }
+    }
+  }
+
+  .txt {
+    margin: 2em 0 5em;
+    line-height: 1.8;
+
+    h2 {
+      margin: 1.5em 0 0.25em;
+      font-size: 1.8em;
+      border-bottom: solid 1px #888;
+    }
+
+    p {
+      font-size: 1.3em;
+      strong {
+        display: inline-block;
+        margin-top: 0.5em;
+        font-size: 1.4em;
+      }
+    }
+  }
+
+  dl {
+    dt,
+    dd {
+      padding: 0.5em 0;
+    }
+
+    dt {
+      width: 28%;
+    }
+
+    dd {
+      width: 72%;
+
+      a {
+        color: var(--c-main);
+        text-decoration: underline;
+      }
+    }
+  }
+}
