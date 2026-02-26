@@ -1,5 +1,6 @@
 @import "reset";
 @import "base";
+@import "setting";
 
 /*------------------------------------
 ------------------------------------*/
@@ -27,7 +28,7 @@
   //DH：#ff5f00
   //BAT：#73399a
   //TDD：#333333
-  //中王：#ff0081
+  //CHUOH：#ff0081
 }
 .c-section-ttl {
   font-size: 1.8em;
@@ -247,7 +248,7 @@ footer {
     border: solid 1px #888;
     padding: 20px 20px 30px;
     @media screen and (max-width: 800px) {
-      width:  100%;
+      width: 100%;
     }
     &.-wide {
       width: 100%;
@@ -258,9 +259,9 @@ footer {
     }
     &-head {
       font-size: 1.2em;
-      padding: .8em 1em;
+      padding: 0.8em 1em;
       width: 110px;
-      flex-shrink: 0;//flexの幅をwidthのサイズで絶対固定する
+      flex-shrink: 0; //flexの幅をwidthのサイズで絶対固定する
       h4 {
       }
       p {
@@ -280,7 +281,7 @@ footer {
       display: flex;
       text-align: left;
       border-left: solid 4px var(--c-main);
-      &+.content__box-item {
+      & + .content__box-item {
         margin-top: 10px;
       }
     }
@@ -291,7 +292,7 @@ footer {
       * flex-basis: 0; （初期サイズを無視）
       */
       flex: 1;
-      padding: .8em 1.5em .8em 0;
+      padding: 0.8em 1.5em 0.8em 0;
       a {
         color: var(--c-main);
         text-decoration: underline;
@@ -318,7 +319,7 @@ footer {
     }
   }
 
-/*------------------------------------
+  /*------------------------------------
 ------------------------------------*/
   #skill,
   .skill {
@@ -364,68 +365,69 @@ footer {
         margin: 0 auto;
         border: solid 1px var(--c-light);
 
-          tr {
-            border-bottom: solid 1px var(--c-light);
+        tr {
+          border-bottom: solid 1px var(--c-light);
 
-            th,td {
-              vertical-align: middle;
+          th,
+          td {
+            vertical-align: middle;
+          }
+
+          th {
+            vertical-align: middle;
+            min-height: 2em;
+            font-size: 1.2em;
+            //padding-top: 1.5em;
+            //background: #f7f7f7;
+            background: var(--c-light);
+            border-bottom: solid 1px #fff;
+            border-right: solid 1px #fff;
+            text-align: center;
+
+            @media screen and (max-width: 800px) {
+              font-size: 1em;
+              width: 50%;
             }
 
-            th {
-              vertical-align: middle;
-              min-height: 2em;
-              font-size: 1.2em;
-              //padding-top: 1.5em;
-              //background: #f7f7f7;
-              background: var(--c-light);
-              border-bottom: solid 1px #fff;
-              border-right: solid 1px #fff;
-              text-align: center;
-
-              @media screen and (max-width: 800px) {
-                font-size: 1em;
-                width: 50%;
-              }
-
-              .star {
-                color: #ff9800;
-              }
+            .star {
+              color: #ff9800;
             }
+          }
 
-            td {
-              padding: 1em;
-              text-align: left;
-              border-right: solid 1px var(--c-light);
+          td {
+            padding: 1em;
+            text-align: left;
+            border-right: solid 1px var(--c-light);
 
-              ul {
-                li.sort_child {
-                  width: 20%;
-                  margin-top: 1em;
+            ul {
+              li.sort_child {
+                width: 20%;
+                margin-top: 1em;
+
+                @media screen and (max-width: 800px) {
+                  width: 50%;
+                }
+
+                img {
+                  width: 3.5em;
 
                   @media screen and (max-width: 800px) {
-                    width: 50%;
-                  }
-
-                  img {
-                    width: 3.5em;
-
-                    @media screen and (max-width: 800px) {
-                      width: 2.5em;
-                    }
-                  }
-
-                  p {
-                    padding-top: 0.5em;
-                    font-size: 1em;
+                    width: 2.5em;
                   }
                 }
 
-                li.sort_child.wide {
-                  width: auto;
+                p {
+                  padding-top: 0.5em;
+                  font-size: 1em;
                 }
+              }
+
+              li.sort_child.wide {
+                width: auto;
               }
             }
           }
+        }
       }
       thead {
         th:last-of-type {
@@ -435,7 +437,7 @@ footer {
     }
   }
 
-/*------------------------------------
+  /*------------------------------------
 ------------------------------------*/
   .work-list {
     &__wrap {
@@ -451,14 +453,14 @@ footer {
       }
     }
     &__menu {
-      width:  25%;
+      width: 25%;
       @media screen and (max-width: 800px) {
         width: 100%;
       }
     }
   }
   .work-category {
-      text-align:  center;
+    text-align: center;
     &__ttl {
       margin-bottom: 0.2em;
     }
@@ -475,24 +477,24 @@ footer {
         background-color: #eee;
       }
       &.--reset {
-            background-color: #f8d7da;
-            color: #721c24;
-            border-color: #f5c6cb;
+        background-color: #f8d7da;
+        color: #721c24;
+        border-color: #f5c6cb;
         &:hover {
-            background-color: #edcace;
+          background-color: #edcace;
         }
       }
     }
   }
   /* work-detail */
   .work-detail {
-    &__body{
+    &__body {
       display: none;
       &.is-active {
         display: block;
       }
     }
-    &__tll{
+    &__tll {
       text-align: center;
       font-size: 1.6em;
       padding: 0 0 0.5em;
@@ -500,7 +502,7 @@ footer {
     &__ico {
       display: inline-block;
     }
-    &__img{
+    &__img {
       aspect-ratio: 16 / 9;
       margin: 0 auto 1em;
       padding: 1.8em 1em;
@@ -514,10 +516,11 @@ footer {
         height: 100%;
       }
     }
-    &__txt{
-    text-align: left;
+    &__txt {
+      text-align: left;
       dl {
-        dt,dd {
+        dt,
+        dd {
           padding: 1em 0;
           line-height: 1.5em;
         }
@@ -533,7 +536,7 @@ footer {
         dd {
           width: 80%;
           @media screen and (max-width: 800px) {
-            width:  100%;
+            width: 100%;
           }
           b {
             display: block;
@@ -541,9 +544,9 @@ footer {
           }
         }
         a {
-            color: var(--c-main);
-            text-decoration: underline;
-          }
+          color: var(--c-main);
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -551,7 +554,7 @@ footer {
   .work-items {
     display: flex;
     flex-wrap: wrap;
-    gap:  5px;
+    gap: 5px;
     margin-top: 1em;
     max-height: 500px;
     overflow-y: scroll;
@@ -569,7 +572,7 @@ footer {
           opacity: 0.3;
         }
       }
-      &+.work-items__item {
+      & + .work-items__item {
         @media screen and (min-width: 800px) {
           margin-top: 1em;
         }
@@ -580,7 +583,7 @@ footer {
       background: #000;
       overflow: hidden;
       //aspect-ratio: 1 / 1;
-      aspect-ratio:  3 / 1;
+      aspect-ratio: 3 / 1;
       position: relative;
       @media screen and (max-width: 800px) {
         aspect-ratio: 1 / 1;
@@ -608,7 +611,7 @@ footer {
       text-align: left;
     }
   }
-.modal {
+  .modal {
     display: none;
     position: fixed;
     inset: 0;
@@ -617,44 +620,55 @@ footer {
     justify-content: center;
     align-items: center;
     &.is-active {
-        display: flex;
+      display: flex;
     }
     &__content {
-        background: #fff;
-        width: 90%;
-        max-height: 90%;
-        overflow-y: auto;
-        border-radius: 8px;
-        padding: 16px;
-        position: relative;
+      background: #fff;
+      width: 90%;
+      max-height: 90%;
+      overflow-y: auto;
+      border-radius: 8px;
+      padding: 16px;
+      position: relative;
     }
     &__close {
-        position: absolute;
-        top: 8px;
-        right: 8px;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
     }
-}
+  }
 
-/*------------------------------------
+  /*------------------------------------
 ------------------------------------*/
   .about {
     h1 {
       font-size: 2em;
     }
 
+    &-lead {
+      margin: 0 auto 2em;
+      width: 80%;
+      @include sp {
+        width: 90%;
+      }
+      p {
+        margin-top: 0.5em;
+      }
+    }
+
     .box {
       width: min(100%, 700px);
       margin: 0 auto;
       position: relative;
-      &+.box {
+      & + .box {
         margin-top: 4em;
       }
     }
 
-/*------------------------------------
+    /*------------------------------------
 ------------------------------------*/
     .timeline {
       &:before {
@@ -718,9 +732,9 @@ footer {
           border-radius: 100px;
           color: #fff;
           text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           @media screen and (max-width: 800px) {
             width: 9em;
             height: 9em;
@@ -734,7 +748,7 @@ footer {
           .year {
             //padding: 20% 0 0;
             display: block;
-            line-height: 1.0em;
+            line-height: 1em;
             .no {
               font-size: 2em;
             }
@@ -754,13 +768,22 @@ footer {
 
         &__detail {
           font-size: 1.2em;
-          &+.period__year {
+          & + .period__year {
             margin-top: 1.5em;
           }
           b {
-              color: var(--c-deep);
-              margin-bottom: 2px;
-              display: inline-block;
+            color: var(--c-deep);
+            margin-bottom: 2px;
+            display: inline-block;
+          }
+          &-list {
+            ul {
+              li {
+                display: block;
+                padding-left: 1em;
+                text-indent: -1em;
+              }
+            }
           }
         }
 
@@ -780,8 +803,8 @@ footer {
 
     .profile {
       p {
-      line-height: 2;
-      font-size: 1.3em;
+        line-height: 2;
+        font-size: 1.3em;
       }
     }
   }
