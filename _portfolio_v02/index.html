@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RISA MASUDA</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+
+    <meta property="og:site_name" content="RISA MASUDA" />
+    <meta property="og:url" content="https://rmrmrmrmrmrm.github.io/230501_portfolio/" />
+    <meta property="og:title" content="RISA MASUDA" />
+    <meta property="og:description" content="ポートフォリオ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./img/og.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="ポートフォリオ" />
+    <meta name="twitter:image:src" content="./img/og.png" />
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div style="display: flex">
+      <nav style="width: 200px; height: 100vh; position: sticky; top: 0; border: solid 1px">
+        <ul>
+          <li><a href="index.html" class="ajax-link">トップ</a></li>
+          <li><a href="profile.html" class="ajax-link">自己紹介</a></li>
+        </ul>
+      </nav>
+
+      <main id="content-area" style="border: solid 1px"></main>
+    </div>
+
+    <script>
+      document.querySelectorAll(".ajax-link").forEach((link) => {
+        link.onclick = async (e) => {
+          e.preventDefault();
+          const res = await fetch(link.href);
+          const html = await res.text();
+
+          // 読み込んだHTMLからbodyの中身だけ抽出して入れ替え
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+          document.getElementById("content-area").innerHTML = doc.body.innerHTML;
+
+          // URLもちゃんと変える（ブラウザの「戻る」も効く）
+          window.history.pushState(null, "", link.href);
+        };
+      });
+    </script>
+  </body>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./js/script.js"></script>
+</html>

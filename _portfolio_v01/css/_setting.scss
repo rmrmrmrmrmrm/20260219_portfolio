@@ -1,0 +1,31 @@
+/* ==================================================
+  breakpoint
+================================================== */
+$breakpoint-pc: 769px;
+$breakpoint-tab-min: 480px; // タブレットの最小幅
+$breakpoint-sp: 768px; // モバイル（タブレット＋スマホ）の最大幅
+
+// media query
+@mixin pc {
+  @media screen and (min-width: $breakpoint-pc) {
+    @content;
+  }
+}
+
+@mixin tab-only {
+  @media screen and (min-width: $breakpoint-tab-min) and (max-width: ($breakpoint-pc - 1)) {
+    @content;
+  }
+}
+
+@mixin sp-only {
+  @media screen and (max-width: $breakpoint-tab-min) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: $breakpoint-sp) {
+    @content;
+  }
+}
