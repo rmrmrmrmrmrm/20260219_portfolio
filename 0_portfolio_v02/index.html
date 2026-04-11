@@ -18,19 +18,24 @@
     <meta name="twitter:description" content="ポートフォリオ" />
     <meta name="twitter:image:src" content="./img/og.png" />
 
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
   </head>
 
   <body>
     <div style="display: flex">
-      <nav style="width: 200px; height: 100vh; position: sticky; top: 0; border: solid 1px">
-        <ul>
-          <li><a href="index.html" class="ajax-link">トップ</a></li>
-          <li><a href="profile.html" class="ajax-link">自己紹介</a></li>
-        </ul>
-      </nav>
+      <div class="sidebar">
+        <h1>ロゴ</h1>
+        <nav>
+          <ul>
+            <li><a href="top.html" class="ajax-link">トップ</a></li>
+            <li><a href="profile.html" class="ajax-link">自己紹介</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /sidebar -->
 
-      <main id="content-area" style="border: solid 1px"></main>
+      <main id="content-area"></main>
     </div>
 
     <script>

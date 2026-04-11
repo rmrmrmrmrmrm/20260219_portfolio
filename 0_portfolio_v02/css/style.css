@@ -1,0 +1,32 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap");
+
+body {
+  background: #f2f2f2;
+  border: none;
+  color: #333;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+}
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+main {
+  display: block;
+  margin-left: 280px;
+  border: solid 1px;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  /*position: sticky;*/
+  /*top: 0;*/
+  border: solid 1px;
+  font-size: 0.71em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 50px 40px;
+}
