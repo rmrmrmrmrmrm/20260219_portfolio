@@ -1,15 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RISA MASUDA</title>
+    <title>RM portfolio | RISA MASUDA</title>
     <link rel="shortcut icon" href="./img/favicon.ico" />
 
-    <meta property="og:site_name" content="RISA MASUDA" />
+    <meta property="og:site_name" content="RM portfolio" />
     <meta property="og:url" content="https://rmrmrmrmrmrm.github.io/230501_portfolio/" />
-    <meta property="og:title" content="RISA MASUDA" />
+    <meta property="og:title" content="RM portfolio" />
     <meta property="og:description" content="ポートフォリオ" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./img/og.png" />
@@ -23,39 +23,48 @@
   </head>
 
   <body>
-    <div style="display: flex">
-      <div class="sidebar">
-        <h1>ロゴ</h1>
-        <nav>
-          <ul>
-            <li><a href="top.html" class="ajax-link">トップ</a></li>
-            <li><a href="profile.html" class="ajax-link">自己紹介</a></li>
-          </ul>
-        </nav>
-      </div>
-      <!-- /sidebar -->
+    <aside class="sidebar" aria-label="サイトメニュー">
+      <h1>
+        <svg
+          class="logo-svg"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 52"
+          role="img"
+          aria-label="RM portfolio"
+        >
+          <text
+            x="0"
+            y="30"
+            font-family="Montserrat, system-ui, sans-serif"
+            font-size="28"
+            font-weight="700"
+            fill="#222222"
+          >
+            RM
+          </text>
+          <text
+            x="0"
+            y="48"
+            font-family="Montserrat, system-ui, sans-serif"
+            font-size="11"
+            font-weight="600"
+            letter-spacing="0.18em"
+            fill="#777777"
+          >
+            portfolio
+          </text>
+        </svg>
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="top.html" class="ajax-link" data-page="top">トップ</a></li>
+          <li><a href="profile.html" class="ajax-link" data-page="profile">自己紹介</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-      <main id="content-area"></main>
-    </div>
+    <main id="content-area"></main>
 
-    <script>
-      document.querySelectorAll(".ajax-link").forEach((link) => {
-        link.onclick = async (e) => {
-          e.preventDefault();
-          const res = await fetch(link.href);
-          const html = await res.text();
-
-          // 読み込んだHTMLからbodyの中身だけ抽出して入れ替え
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, "text/html");
-          document.getElementById("content-area").innerHTML = doc.body.innerHTML;
-
-          // URLもちゃんと変える（ブラウザの「戻る」も効く）
-          window.history.pushState(null, "", link.href);
-        };
-      });
-    </script>
+    <script src="./js/script.js"></script>
   </body>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="./js/script.js"></script>
 </html>
