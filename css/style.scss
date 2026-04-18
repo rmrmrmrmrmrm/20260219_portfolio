@@ -39,6 +39,10 @@
   padding-left: 1em;
   text-indent: -1em;
 }
+.c-marker {
+  background: linear-gradient(transparent 55%, #fff799 55%);
+  font-weight: bold;
+}
 
 /*------------------------------------
 ------------------------------------*/
@@ -503,7 +507,8 @@ footer {
       display: inline-block;
     }
     &__img {
-      aspect-ratio: 16 / 9;
+      //aspect-ratio: 16 / 9;
+      aspect-ratio: 16 / 11;
       margin: 0 auto 1em;
       padding: 1.8em 1em;
       //background-color: #eee;
@@ -514,6 +519,14 @@ footer {
       img {
         width: auto;
         height: 100%;
+      }
+      &.--scroll {
+        //border: solid red;
+        overflow-y: auto;
+        img {
+          width: 95%;
+          height: auto;
+        }
       }
     }
     &__txt {
@@ -547,6 +560,9 @@ footer {
           color: var(--c-main);
           text-decoration: underline;
         }
+      }
+      small {
+        font-size: 0.8em;
       }
     }
   }
@@ -655,7 +671,7 @@ footer {
         width: 90%;
       }
       p {
-        margin-top: 0.5em;
+        margin-top: 0.8em;
       }
     }
 

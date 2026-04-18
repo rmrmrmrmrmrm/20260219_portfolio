@@ -644,6 +644,11 @@ animations
   text-indent: -1em;
 }
 
+.c-marker {
+  background: linear-gradient(transparent 55%, #fff799 55%);
+  font-weight: bold;
+}
+
 /*------------------------------------
 ------------------------------------*/
 header {
@@ -1080,7 +1085,7 @@ footer {
   display: inline-block;
 }
 .contents .work-detail__img {
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/11;
   margin: 0 auto 1em;
   padding: 1.8em 1em;
   overflow: hidden;
@@ -1091,6 +1096,13 @@ footer {
 .contents .work-detail__img img {
   width: auto;
   height: 100%;
+}
+.contents .work-detail__img.--scroll {
+  overflow-y: auto;
+}
+.contents .work-detail__img.--scroll img {
+  width: 95%;
+  height: auto;
 }
 .contents .work-detail__txt {
   text-align: left;
@@ -1126,6 +1138,9 @@ footer {
 .contents .work-detail__txt dl a {
   color: var(--c-main);
   text-decoration: underline;
+}
+.contents .work-detail__txt small {
+  font-size: 0.8em;
 }
 .contents .work-items {
   display: flex;
@@ -1231,7 +1246,7 @@ footer {
   }
 }
 .contents .about-lead p {
-  margin-top: 0.5em;
+  margin-top: 0.8em;
 }
 .contents .about .box {
   width: min(100%, 700px);
