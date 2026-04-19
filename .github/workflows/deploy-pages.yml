@@ -1,0 +1,63 @@
+# Vue（Vite）をビルドして GitHub Pages に公開します。
+# リポジトリ Settings → Pages で Source を「GitHub Actions」にしてください。
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ['main', 'master']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 0_portfolio_v02_vite
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: 0_portfolio_v02_vite/package-lock.json
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          set -e
+          # ユーザーサイト用リポジトリ（<user>.github.io）なら base は /
+          if [ "$REPO_NAME" = "$OWNER.github.io" ]; then
+            npm run build
+          else
+            npm run build -- --base=/"$REPO_NAME"/
+          fi
+          # SPA の直接URL・リロード対策（GitHub Pages は 404.html を index 相当として使う）
+          cp dist/index.html dist/404.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: 0_portfolio_v02_vite/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
