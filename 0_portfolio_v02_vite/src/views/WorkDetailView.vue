@@ -3,6 +3,8 @@ import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { getWorkBySlug } from '@/data/works'
 
+const baseUrl = import.meta.env.BASE_URL
+
 const props = defineProps({
   slug: {
     type: String,
@@ -11,6 +13,21 @@ const props = defineProps({
 })
 
 const work = computed(() => getWorkBySlug(props.slug))
+
+const imageSrc = computed(() => {
+  const path = work.value?.image
+  if (!path) return ''
+  const normalized = path.replace(/^\//, '')
+  return `${baseUrl}${normalized}`
+})
+
+const overviewText = computed(
+  () => work.value?.overview ?? work.value?.summary ?? '',
+)
+
+const impressionParagraphs = computed(
+  () => work.value?.impressions ?? work.value?.body ?? [],
+)
 </script>
 
 <template>
@@ -25,10 +42,37 @@ const work = computed(() => getWorkBySlug(props.slug))
     <ul class="tags detail-tags" aria-label="タグ">
       <li v-for="tag in work.tags" :key="tag" class="tags__item">{{ tag }}</li>
     </ul>
-    <p class="lead">{{ work.summary }}</p>
-    <div class="detail-body">
-      <p v-for="(paragraph, i) in work.body" :key="i">{{ paragraph }}</p>
-    </div>
+    <figure v-if="work.image && imageSrc" class="detail-figure">
+      <img
+        class="detail-figure__img"
+        :src="imageSrc"
+        :alt="`${work.title}のスクリーンショット`"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+    <section v-if="overviewText" class="detail-section">
+      <h2 class="detail-section__ttl">概要</h2>
+      <p class="detail-section__body">{{ overviewText }}</p>
+    </section>
+    <dl v-if="work.url || work.stack" class="detail-facts">
+      <template v-if="work.url">
+        <dt>URL</dt>
+        <dd>
+          <a :href="work.url" target="_blank" rel="noopener noreferrer">{{ work.url }}</a>
+        </dd>
+      </template>
+      <template v-if="work.stack">
+        <dt>技術スタック</dt>
+        <dd>{{ work.stack }}</dd>
+      </template>
+    </dl>
+    <section v-if="impressionParagraphs.length" class="detail-section">
+      <h2 class="detail-section__ttl">感想</h2>
+      <div class="detail-body">
+        <p v-for="(paragraph, i) in impressionParagraphs" :key="i">{{ paragraph }}</p>
+      </div>
+    </section>
     <p class="back">
       <RouterLink to="/works" class="inline-link">← 実績一覧へ</RouterLink>
     </p>

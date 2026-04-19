@@ -7,7 +7,7 @@ import { works } from '@/data/works'
   <section class="page">
     <h1 class="page-title">実績</h1>
     <p class="lead">
-      案件データは <code>src/data/works.js</code> にまとめています。ここに行を足すと一覧と詳細の両方に反映されます。
+      <!-- 案件データは <code>src/data/works.js</code> にまとめています。ここに行を足すと一覧と詳細の両方に反映されます。 -->
     </p>
     <ul class="work-list">
       <li v-for="item in works" :key="item.slug" class="work-card">
