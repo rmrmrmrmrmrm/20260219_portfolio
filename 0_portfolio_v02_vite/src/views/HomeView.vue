@@ -6,13 +6,10 @@ import { RouterLink } from 'vue-router'
   <section class="page page--home">
     <p class="eyebrow">Portfolio / Knock</p>
     <h1 class="page-title">
-      Good design<br>lasts a long time.
-      <!-- 優れたデザインは長持ちする。 -->
+      Good design<br>lasts a long time.<!-- 優れたデザインは長持ちする。 -->
       <br><span class="page-title--jp">ずっと、心地よく続くものを</span>
     </h1>
     <div class="lead">
-      <!-- このサイトは Vue + Vite のポートフォリオ用叩き台です。
-      デザインは最小限なので、配色やタイポグラフィはお好みで差し替えてください。 -->
       <p>
       美しい演出の裏側で、誰にとっても使いやすく、
       <br>ずっと守り続けられる「優しさ」をコードに込めていたい。

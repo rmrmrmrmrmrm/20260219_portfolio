@@ -85,6 +85,9 @@ code {
   position: sticky;
   top: 0;
   z-index: 10;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background: #00000000;
 }
 
 .logo {
@@ -181,7 +184,7 @@ code {
 .lead--en {
   margin: 0 0 1.5rem;
   font-size: 0.8rem;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .actions {

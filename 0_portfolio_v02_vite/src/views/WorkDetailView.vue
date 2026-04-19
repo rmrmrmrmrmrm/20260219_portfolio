@@ -46,7 +46,7 @@ const impressionParagraphs = computed(
       <img
         class="detail-figure__img"
         :src="imageSrc"
-        :alt="`${work.title}のスクリーンショット`"
+        :alt="`${work.title}`"
         loading="lazy"
         decoding="async"
       />
