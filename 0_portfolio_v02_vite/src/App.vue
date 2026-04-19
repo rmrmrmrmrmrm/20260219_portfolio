@@ -36,7 +36,7 @@ const worksActive = computed(
     <footer class="site-footer">
       <p class="footer-note">
         MASUDA RISA
-        <!-- 叩き台 — 文言・実績データは <code>src/data/works.js</code> で編集できます。 -->
+        <!-- 文言・実績データは <code>src/data/works.js</code> で編集できます。 -->
       </p>
     </footer>
   </div>

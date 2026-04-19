@@ -1,0 +1,21 @@
+# --- OS特有の不要なファイル ---
+.DS_Store
+Thumbs.db
+
+# --- エディタ・ツールの設定 (チームで共有不要なもの) ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- ログやキャッシュ ---
+*.log
+.cache/
+
+# --- 自分の作業用・メモ用 (今回追加するもの) ---
+memo.html
+memo/
+temp/
+
+# --- パッケージ管理 (Node.jsなどを使う場合) ---
+node_modules/
