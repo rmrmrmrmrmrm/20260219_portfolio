@@ -11,22 +11,16 @@ import { RouterLink } from 'vue-router'
     </h1>
     <div class="lead">
       <p>
-      美しい演出の裏側で、誰にとっても使いやすく、
-      <br>ずっと守り続けられる「優しさ」をコードに込めていたい。
-      <br>それが、10年この業界で歩んできた私のこだわりです。
-      </p>
-      <p>
-      デザインの意図を汲み取り、長く愛される土台を作る。
-      <br>その安心感があるからこそ、新しい挑戦も思い切り楽しめるはず。
-      <br>モダンな技術も、温かい配慮も。その両方を詰め込んで、一歩先の実装を目指しています。
+      制作の現場で求められるのは実現力とスピード。<br>
+      それを支える技術の学習も、チームへの配慮も、制作では大事な事です。<br>
+      <br>
+      チームと協力してクライアント様やユーザーに長く愛されるプロダクトを作っていきたい、<br>
+      そんな想いでクリエイティブに関わっています。
       </p>
     </div>
     <p class="lead--en">
-      While flashy presentations are nice, I want to infuse my code with "gentleness" that makes it easy for anyone to use and something that can be cherished for a long time.
-      <br>That's my commitment after 10 years in this industry.
-      <br>Understanding the design intent and creating a foundation that will be loved for years to come.
-      <br>It's that sense of security that allows you to fully enjoy new challenges.
-      <br>Modern technology and warm consideration—I aim to implement solutions that are one step ahead by incorporating both.
+      Production demands a balance of high-quality execution and speed. For me, creative work isn’t just about the output; it's about the technical skill that backs it up and the care we show our teammates.
+      <br>I am committed to the creative process because I want to work alongside my team to craft products that earn the lasting affection of our clients and users.
     </p>
     <div class="actions">
       <RouterLink to="/works" class="button">実績を見る</RouterLink>
