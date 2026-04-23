@@ -288,7 +288,7 @@ export const works = [
     image2: 'img/work/2015_daigaku2.JPG',
     image3: '',
     effort: '',
-    overview: '京都造形芸術大学 美術工芸科 で日本画コースを履修しました。',
+    overview: '京都造形芸術大学で日本画を履修しました。',
     url: '',
     stack: '絹本、膠、岩絵具、箔',
     impressions: [
