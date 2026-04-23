@@ -84,7 +84,7 @@ export const works = [
   },
   {
     slug: '2023_misuya',
-    subtitle: '京都本みすや針',
+    subtitle: '裁縫針',
     title: 'みすや忠兵衛',
     year: '2023',
     role: 'コーディング(MakeShop)',
