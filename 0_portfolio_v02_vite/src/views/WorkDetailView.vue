@@ -20,9 +20,21 @@ const imageSrc = computed(() => {
   const normalized = path.replace(/^\//, '')
   return `${baseUrl}${normalized}`
 })
+const imageSrc2 = computed(() => {
+  const path = work.value?.image2
+  if (!path) return ''
+  const normalized = path.replace(/^\//, '')
+  return `${baseUrl}${normalized}`
+})
+const imageSrc3 = computed(() => {
+  const path = work.value?.image3
+  if (!path) return ''
+  const normalized = path.replace(/^\//, '')
+  return `${baseUrl}${normalized}`
+})
 
 const overviewText = computed(
-  () => work.value?.overview ?? work.value?.summary ?? '',
+  () => work.value?.overview ?? work.value?.effort ?? '',
 )
 
 const impressionParagraphs = computed(
@@ -35,22 +47,49 @@ const impressionParagraphs = computed(
     <p class="eyebrow">
       <RouterLink to="/works" class="inline-link">実績</RouterLink>
       <span aria-hidden="true"> / </span>
-      <span>{{ work.title }}</span>
+      <span>{{ work.subtitle }} {{ work.title }}</span>
     </p>
-    <h1 class="page-title">{{ work.title }}</h1>
+    <h1 class="page-title"><span class="page-title--sub">{{ work.subtitle }}</span>{{ work.title }}</h1>
     <p class="detail-meta">{{ work.year }} · {{ work.role }}</p>
     <ul class="tags detail-tags" aria-label="タグ">
       <li v-for="tag in work.tags" :key="tag" class="tags__item">{{ tag }}</li>
     </ul>
-    <figure v-if="work.image && imageSrc" class="detail-figure">
-      <img
-        class="detail-figure__img"
-        :src="imageSrc"
-        :alt="`${work.title}`"
-        loading="lazy"
-        decoding="async"
-      />
-    </figure>
+    <p class="detail-figure-note">画像をクリックで拡大表示</p>
+    <div class="detail-figure-box">
+      <figure v-if="work.image && imageSrc" class="detail-figure">
+        <a :href="imageSrc" target="_blank" rel="noopener noreferrer">
+        <img
+          class="detail-figure__img"
+          :src="imageSrc"
+          :alt="`${work.title}`"
+          loading="lazy"
+          decoding="async"
+        />
+        </a>
+      </figure>
+      <figure v-if="work.image2 && imageSrc2" class="detail-figure">
+        <a :href="imageSrc2" target="_blank" rel="noopener noreferrer">
+        <img
+          class="detail-figure__img"
+          :src="imageSrc2"
+          :alt="`${work.title}`"
+          loading="lazy"
+          decoding="async"
+        />
+        </a>
+      </figure>
+      <figure v-if="work.image3 && imageSrc3" class="detail-figure">
+        <a :href="imageSrc3" target="_blank" rel="noopener noreferrer">
+        <img
+          class="detail-figure__img"
+          :src="imageSrc3"
+          :alt="`${work.title}`"
+          loading="lazy"
+          decoding="async"
+        />
+        </a>
+      </figure>
+    </div><!-- /detail-figure-box -->
     <section v-if="overviewText" class="detail-section">
       <h2 class="detail-section__ttl">概要</h2>
       <p class="detail-section__body">{{ overviewText }}</p>
@@ -61,6 +100,10 @@ const impressionParagraphs = computed(
         <dd>
           <a :href="work.url" target="_blank" rel="noopener noreferrer">{{ work.url }}</a>
         </dd>
+      </template>
+      <template v-if="work.effort">
+        <dt>工数</dt>
+        <dd>{{ work.effort }}</dd>
       </template>
       <template v-if="work.stack">
         <dt>技術スタック</dt>
