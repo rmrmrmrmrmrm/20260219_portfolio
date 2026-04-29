@@ -216,10 +216,10 @@ code {
 
 .work-list {
   list-style: none;
-  margin: 2rem -1.6rem 0;
+  margin: 2rem  0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   /*gap: 1rem;*/
 }
 
@@ -289,7 +289,7 @@ code {
   margin: 0 0 1.25rem;
     width: 100%;
     overflow: hidden;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1.6 / 1;
     object-fit: cover;
 }
 
