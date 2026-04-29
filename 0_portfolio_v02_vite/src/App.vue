@@ -14,18 +14,10 @@ const worksActive = computed(
     <header class="site-header">
       <RouterLink to="/" class="logo">Portfolio</RouterLink>
       <nav class="nav" aria-label="メイン">
-        <RouterLink
-          to="/"
-          class="nav-link"
-          :class="{ 'nav-link--active': homeActive }"
-        >
+        <RouterLink to="/" class="nav-link" :class="{ 'nav-link--active': homeActive }">
           TOP
         </RouterLink>
-        <RouterLink
-          to="/works"
-          class="nav-link"
-          :class="{ 'nav-link--active': worksActive }"
-        >
+        <RouterLink to="/works" class="nav-link" :class="{ 'nav-link--active': worksActive }">
           実績
         </RouterLink>
       </nav>
@@ -35,7 +27,7 @@ const worksActive = computed(
     </main>
     <footer class="site-footer">
       <p class="footer-note">
-        MASUDA RISA
+        R.M
         <!-- 文言・実績データは <code>src/data/works.js</code> で編集できます。 -->
       </p>
     </footer>
