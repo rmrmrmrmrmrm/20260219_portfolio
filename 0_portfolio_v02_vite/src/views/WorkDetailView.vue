@@ -58,35 +58,17 @@ const impressionParagraphs = computed(
     <div class="detail-figure-box">
       <figure v-if="work.image && imageSrc" class="detail-figure">
         <a :href="imageSrc" target="_blank" rel="noopener noreferrer">
-        <img
-          class="detail-figure__img"
-          :src="imageSrc"
-          :alt="`${work.title}`"
-          loading="lazy"
-          decoding="async"
-        />
+          <img class="detail-figure__img" :src="imageSrc" :alt="`${work.title}`" loading="lazy" decoding="async" />
         </a>
       </figure>
       <figure v-if="work.image2 && imageSrc2" class="detail-figure">
         <a :href="imageSrc2" target="_blank" rel="noopener noreferrer">
-        <img
-          class="detail-figure__img"
-          :src="imageSrc2"
-          :alt="`${work.title}`"
-          loading="lazy"
-          decoding="async"
-        />
+          <img class="detail-figure__img" :src="imageSrc2" :alt="`${work.title}`" loading="lazy" decoding="async" />
         </a>
       </figure>
       <figure v-if="work.image3 && imageSrc3" class="detail-figure">
         <a :href="imageSrc3" target="_blank" rel="noopener noreferrer">
-        <img
-          class="detail-figure__img"
-          :src="imageSrc3"
-          :alt="`${work.title}`"
-          loading="lazy"
-          decoding="async"
-        />
+          <img class="detail-figure__img" :src="imageSrc3" :alt="`${work.title}`" loading="lazy" decoding="async" />
         </a>
       </figure>
     </div><!-- /detail-figure-box -->
@@ -115,6 +97,10 @@ const impressionParagraphs = computed(
       <div class="detail-body">
         <p v-for="(paragraph, i) in impressionParagraphs" :key="i">{{ paragraph }}</p>
       </div>
+    </section>
+    <section v-if="work.message_html" class="detail-section">
+      <h2 class="detail-section__ttl">感想</h2>
+      <p v-html="work.message_html"></p>
     </section>
     <p class="back">
       <RouterLink to="/works" class="inline-link">← 実績一覧へ</RouterLink>

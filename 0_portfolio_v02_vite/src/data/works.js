@@ -25,6 +25,9 @@ export const works = [
     impressions: [
     '＊',
     ],
+    message_html: [
+    '＊',
+    ],
   },
   */
   {
@@ -39,19 +42,12 @@ export const works = [
     image3: 'img/work/2026_vue3.png',
     effort: '',
     overview: 'Web制作でのVue実装について学習をしています。',
-    url: 'https://rmrmrmrmrmrm.github.io/20260426_Vue/hoge/#/body',
+    url: 'https://rmrmrmrmrmrm.github.io/20260426_Vue/hoge/',
     stack: '【フロントエンド】Vue / Vite【バージョン管理】GitHub【ホスティング】GitHub Pages【AI】Cursor / Gemini',
     impressions: [
-      '・Web制作での利用シーンについて',
-      '・Web制作の場合、ビルド・サーバーアップはどのように行うのか',
-      '・既存静的サイト内にVueコンテンツを追加することはできるか',
-      '・Nuxtを使うメリットは？',
-      '・SPA or SSG or SSR の特徴と作業の違い',
-      '・SEOリスク対策について',
-      '・ルーティングの設定、ビルドのやり方',
-      '・診断コンテンツのロジックの考え方や実装について',
-      '・Pages > GitHub Actionsでの自動ビルド設定',
-      'など',
+    ],
+    message_html: [
+      '<b>作ったもの</b><br><a href="https://rmrmrmrmrmrm.github.io/20260426_Vue/hoge/#/body" target="_blank" rel="noopener">骨格診断</a>：心理テスト形式の診断コンテンツです<br><a href="https://rmrmrmrmrmrm.github.io/20260426_Vue/hoge/#/shoes" target="_blank" rel="noopener">靴サイズ</a>：足長と足囲の計測から商品を検索できるツールです<br><a href="https://rmrmrmrmrmrm.github.io/20260426_Vue/hoge/#/fortune" target="_blank" rel="noopener">今日の占い</a>：タロット占い(ワンオラクル)ができます<br><br><b>勉強になったこと</b><br>・Web制作での利用シーンについて<br>・Web制作の場合、ビルド・サーバーアップはどのように行うのか<br>・既存静的サイト内にVueコンテンツを追加することはできるか<br>・Nuxtを使うメリットは？<br>・SPA or SSG or SSR の特徴と作業の違い<br>・SEOリスク対策について<br>・ルーティングの設定、ビルドのやり方<br>・診断コンテンツのロジックの考え方や実装について<br>・Pages > GitHub Actionsでの自動ビルド設定<br>など<br>',
     ],
   },
   {
