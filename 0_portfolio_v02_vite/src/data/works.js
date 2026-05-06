@@ -258,6 +258,10 @@ export const works = [
     stack: '【CMS】WebRelease',
     impressions: [
       'ボリュームは色々ですが量が多い為、効率よくできるようにスニペットを作成したり、Pythonでの自動化を試みたりしました。',
+      '「レディース、キッズベビーマタニティ、メンズ、大きいサイズ」関連ページの運用実装',
+      '特集ページ(例 https://www.nissen.co.jp/s/shoes/AC21SP102/',
+      'サムネイル上部(例 https://www.nissen.co.jp/s/ladies/category/LZ/',
+      '',
     ],
   },
   {
