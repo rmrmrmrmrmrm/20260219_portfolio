@@ -204,7 +204,7 @@ export const works = [
     year: '2023',
     role: 'コーディング(makeshop,WP)',
     tags: ['WordPress', 'サイト制作'],
-    image: 'img/work/2023_badgekoi.png',
+    image: 'img/work/2023_badgekoi1.png',
     image2: 'img/work/2023_badgekoi2.png',
     image3: '',
     effort: '',
